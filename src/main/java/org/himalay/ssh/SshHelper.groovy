@@ -156,7 +156,7 @@ public class SshHelper implements UserInfo, Logger{
 	public def inAnExecChannel(Closure clsureWithChannel)
 	{
 		def retVal = null
-		this.sess=getASession();
+		this.sess=getASession(this.port);
 		this.sess.connect();
 		Channel channel = this.sess.openChannel("exec");
 		try{
